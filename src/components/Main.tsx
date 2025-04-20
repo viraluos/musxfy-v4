@@ -1,6 +1,6 @@
-import LeftSideBar from "@/components/LeftSideBar";
-import CenteredPlayer from "@/components/CenteredPlayer";
-import RightSideBar from "@/components/RightSideBar";
+import LeftSideBar from "@/components/LeftSideBar/LeftSideBar";
+import CenteredPlayer from "@/components/CenteredPlayer/CenteredPlayer";
+import RightSideBar from "@/components/RightSideBar/RightSideBar";
 
 export default function Main() {
   
