@@ -1,7 +1,11 @@
+import Main from "@/components/Main";
+
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen flex flex-col">
       
+      <Main />
+
     </div>
   );
 }
