@@ -1,22 +1,14 @@
-import LeftSideBar from "@/components/LeftSideBar/LeftSideBar";
-import RightSideBar from "@/components/RightSideBar/RightSideBar";
-import { usePathname } from "next/navigation";
+import Main from "@/components/Main";
+import Footer from "@/components/Footer/Footer";
 
 export default function Discover() {
+  return (
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen flex flex-col">
+      
+      <Main />
 
-    const pathname = usePathname();
+      <Footer />
 
-    return (
-        <main className="flex flex-grow flex-col lg:flex-row">
-
-            <LeftSideBar />
-
-            <div>{pathname}</div>
-
-
-            <RightSideBar />
-
-        </main>
-    )
-    
-};
+    </div>
+  );
+}
