@@ -9,8 +9,8 @@ export default function RightSideBar() {
 
                 <Image
                     className="rounded-md"
-                    src="https://placehold.co/208"
                     alt="Current song"
+                    src="https://placehold.co/208"
                     width={208} height={208}
                 /> {/* to update every time the song changes */}
 

@@ -1,26 +1,22 @@
-"use client";
-
 import LeftSideBar from "@/components/LeftSideBar/LeftSideBar";
-import CenteredPlayer from "@/components/CenteredPlayer/CenteredPlayer";
 import RightSideBar from "@/components/RightSideBar/RightSideBar";
 import { usePathname } from "next/navigation";
 
-export default function Main() {
+export default function Discover() {
 
     const pathname = usePathname();
-  
-    return(
+
+    return (
         <main className="flex flex-grow flex-col lg:flex-row">
 
             <LeftSideBar />
 
             <div>{pathname}</div>
 
-            <CenteredPlayer />
 
             <RightSideBar />
 
         </main>
-    );
+    )
     
 };
