@@ -1,3 +1,4 @@
+import type { SidebarLink } from "@/app/types";
 import Link from "next/link";
 
 export default function LeftSideBarLink({ link }: { link: SidebarLink }) {
