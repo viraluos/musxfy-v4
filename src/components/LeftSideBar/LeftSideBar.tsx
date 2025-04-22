@@ -39,14 +39,14 @@ export default function LeftSideBar() {
             </div>
 
             <div className="mt-8">
-                <h2 className="text-lg font-semibold">Playlist name</h2> {/* updates when the user changes his playilist */}
+                <h2 className="text-lg font-semibold">Playlist name</h2> {/* updates when the user changes his playlist */}
                 <input
                     type="text"
                     className="w-full p-2 my-4 rounded bg-gray-700"
                     placeholder="Enter song name"
                 />
 
-                <ul className="space-y-2" id="playlist-container"></ul> {/* where songs will go */}
+                <ul className="space-y-2" id="playlist-container"></ul> {/* where all the songs will go */}
             </div>
         </aside>
     );
