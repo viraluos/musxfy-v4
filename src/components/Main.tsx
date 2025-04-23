@@ -39,11 +39,7 @@ export default function Main() {
     return(
         <main className="flex flex-grow flex-col lg:flex-row">
 
-            <LeftSideBar />
-
             {renderPage()}
-
-            <RightSideBar />
 
         </main>
     );

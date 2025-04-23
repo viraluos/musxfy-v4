@@ -1,4 +1,5 @@
 import LeftSideBarLink from "@/components/LeftSideBar/LeftSideBarLink";
+import LeftSideBarPlaylist from "@/components/LeftSideBar/LeftSideBarPlaylist/LeftSideBarPlaylist";
 
 export default function LeftSideBar() {
     const links = [
@@ -38,16 +39,7 @@ export default function LeftSideBar() {
                 </ul>
             </div>
 
-            <div className="m-0 lg:mt-8">
-                <h2 className="text-lg font-semibold">Playlist name</h2> {/* updates when the user changes his playlist */}
-                <input
-                    type="text"
-                    className="w-full p-2 my-4 rounded bg-gray-700"
-                    placeholder="Enter song name"
-                />
-
-                <ul className="space-y-2" id="playlist-container"></ul> {/* where all the songs will go */}
-            </div>
+            <LeftSideBarPlaylist />
         </aside>
     );
 }

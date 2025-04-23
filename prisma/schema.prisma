@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model songs {
+  id        String @id @db.VarChar(36)
+  title     String @db.VarChar(255)
+  author    String @db.VarChar(255)
+  image     String @db.VarChar(255)
+  song_path String @db.VarChar(255)
+  duration  String @db.VarChar(255)
+}

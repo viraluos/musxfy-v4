@@ -1,6 +1,8 @@
+import Separator from "@/components/Separator";
+
 export default function PlaylistsComponent() {
     return (
-        <section className="flex-1 flex flex-col p-6 bg-gradient-to-b from-gray-900 to-black text-white min-h-screen">
+        <section className="mb-8 flex-1 flex flex-col p-6 bg-gradient-to-b from-gray-900 to-black text-white min-h-screen">
             {/* Header con titolo e pulsanti */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8">
                 <div>
@@ -11,25 +13,28 @@ export default function PlaylistsComponent() {
                         Le tue collezioni musicali personali
                     </p>
                 </div>
-                <button className="bg-amber-500 hover:bg-amber-600 transition px-6 py-3 rounded-full font-bold text-black mt-4 md:mt-0">
+                <button className="cursor-pointer bg-amber-500 hover:bg-amber-600 transition px-6 py-3 rounded-full font-bold text-black mt-4 md:mt-0">
                     Crea playlist
                 </button>
             </div>
 
             {/* Menu di navigazione */}
             <nav className="border-b border-gray-800 mb-8">
-                <ul className="flex space-x-6">
-                    <li className="pb-4 border-b-2 border-amber-500 font-medium">
+                <ul className="flex gap-4">
+                    <li className="cursor-pointer pb-4 border-b-2 border-amber-500 font-medium">
                         Tutte
-                    </li>
-                    <li className="pb-4 text-gray-400 hover:text-white transition">
-                        Tue creazioni
-                    </li>
-                    <li className="pb-4 text-gray-400 hover:text-white transition">
-                        Salvate
-                    </li>
-                    <li className="pb-4 text-gray-400 hover:text-white transition">
-                        Seguite
+                    </li><li><Separator /></li>
+                    
+                    <li className="cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
+                        Le tue creazioni
+                    </li><li><Separator /></li>
+                    
+                    <li className="cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
+                        Playlist seguite
+                    </li><li><Separator /></li>
+                    
+                    <li className="cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
+                        Potrebbero piacerti
                     </li>
                 </ul>
             </nav>
@@ -175,11 +180,6 @@ export default function PlaylistsComponent() {
 
                     {/* Altre playlist suggerite... */}
                 </div>
-            </div>
-
-            {/* Player fisso in basso */}
-            <div className="fixed bottom-0 left-0 right-0 bg-gray-900 h-20 border-t border-gray-800 flex items-center px-4">
-                {/* Contenuto del player... (come nella sezione precedente) */}
             </div>
         </section>
     );
