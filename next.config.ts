@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
         hostname: "**"
       }
     ],
-    dangerouslyAllowSVG: true, // <-- lo sblocchi tu
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;", // sicurezza base
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   }
 };
 

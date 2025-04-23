@@ -72,10 +72,10 @@ export default function HomePageComponent() {
             </div>
 
             {/* Decorazione circolare (come Spotify) */}
-            <div className="absolute -right-32 -top-32 opacity-10 pointer-events-none -z-0">
+            <div className="animate-float absolute -right-32 -top-32 opacity-10 pointer-events-none -z-0">
                 <div className="rounded-full bg-gradient-to-b from-indigo-500 to-pink-500 w-96 h-96"></div>
             </div>
-            <div className="absolute -right-64 top-48 opacity-10 pointer-events-none -z-0">
+            <div className="animate-float absolute -right-64 top-48 opacity-10 pointer-events-none -z-0">
                 <div className="rounded-xl -rotate-30 bg-gradient-to-b from-amber-500 to-blue-500 w-96 h-96"></div>
             </div>
         </section>

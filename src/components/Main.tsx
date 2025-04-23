@@ -2,9 +2,6 @@
 
 import { usePathname } from "next/navigation";
 
-import LeftSideBar from "@/components/LeftSideBar/LeftSideBar";
-import RightSideBar from "@/components/RightSideBar/RightSideBar";
-
 import HomePageComponent from "@/components/CentralComponents/HomePage/HomePage";
 import DiscoverComponent from "./CentralComponents/Discover/Discover";
 import PlaylistsComponent from "./CentralComponents/Playlists/Playlists";
