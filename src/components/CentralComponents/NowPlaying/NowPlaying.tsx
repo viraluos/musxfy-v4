@@ -5,7 +5,7 @@ export default function NowPlayingComponent() {
     
 
     return (
-        <section className="flex-1 flex flex-col items-center justify-center p-6 bg-gradient-to-b from-gray-900 to-black relative overflow-y-scroll">
+        <section className="flex-1 flex flex-col items-center justify-center p-6 bg-gradient-to-b from-gray-900 to-black relative">
             <div className="relative mb-8">
                 <div className="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center relative z-10 vinyl-spin overflow-hidden">
                     <Image

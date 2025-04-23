@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function RightSideBar() {
     return (
-        <aside className="hidden lg:flex flex-col w-full lg:w-64 p-6 bg-gradient-to-r lg:bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900 z-1">
+        <aside className="sticky top-0 h-screen hidden lg:flex flex-col w-full lg:w-64 p-6 bg-gradient-to-r lg:bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900 z-1">
             <h2 className="text-lg font-bold mb-4">Now Playing</h2>
 
             <div className="text-sm text-gray-300 space-y-4">
