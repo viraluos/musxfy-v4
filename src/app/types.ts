@@ -12,3 +12,5 @@ export type SidebarSong = {
     song_path: string;
     duration: string;
 }
+
+export type SidebarSongs = SidebarSong[];
