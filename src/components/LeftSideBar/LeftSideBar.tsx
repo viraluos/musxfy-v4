@@ -27,18 +27,18 @@ export default function LeftSideBar() {
     ];
 
     return (
-        <aside className="w-full flex items-center justify-between lg:flex-col lg:items-start lg:justify-start lg:w-64 p-6 bg-gradient-to-r lg:bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900">
+        <aside className="w-full flex items-center justify-between lg:flex-col lg:items-start lg:justify-start lg:w-64 p-6 bg-gradient-to-r lg:bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900 z-1">
             <div>
                 <h2 className="text-xl font-bold lg:mb-6">Library</h2>
 
-                <ul className="flex items-start gap-2 lg:flex-col lg:space-y-3">
+                <ul className="flex items-start gap-2 lg:flex-col lg:space-y-3 my-4">
                     {links.map((link) => (
                         <LeftSideBarLink link={link} key={link.path} />
                     ))}
                 </ul>
             </div>
 
-            <div className="mt-8">
+            <div className="m-0 lg:mt-8">
                 <h2 className="text-lg font-semibold">Playlist name</h2> {/* updates when the user changes his playlist */}
                 <input
                     type="text"
