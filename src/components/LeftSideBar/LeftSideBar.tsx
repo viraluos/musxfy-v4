@@ -1,5 +1,4 @@
 import LeftSideBarLink from "@/components/LeftSideBar/LeftSideBarLink";
-// import LeftSideBarPlaylist from "@/components/LeftSideBar/LeftSideBarPlaylist/LeftSideBarPlaylist";
 
 export default function LeftSideBar() {
     const links = [

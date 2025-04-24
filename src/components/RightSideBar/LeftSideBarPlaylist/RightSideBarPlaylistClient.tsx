@@ -1,7 +1,7 @@
 "use client";
 
 // import { useState } from "react";
-import LeftSideBarSong from "./LeftSideBarSong";
+import LeftSideBarSong from "./RightSideBarSong";
 import { SidebarSong, SidebarSongs } from "@/app/types";
 
 export default function LeftSideBarPlaylistClient({ songs }: { songs: SidebarSongs }) {

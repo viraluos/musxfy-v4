@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import LeftSideBarPlaylist from "../LeftSideBar/LeftSideBarPlaylist/LeftSideBarPlaylist";
+import LeftSideBarPlaylist from "./LeftSideBarPlaylist/RightSideBarPlaylist";
 
 export default function RightSideBar() {
     return (
