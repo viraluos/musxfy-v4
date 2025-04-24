@@ -19,21 +19,18 @@ export default function HomePageComponent() {
             {/* Contenuto principale */}
             <div className="w-full max-w-6xl z-1">
                 <h1 className="text-5xl lg:text-7xl font-bold mb-6 text-left">
-                    {
-                        todays_hours >= 18
+                    {todays_hours >= 18
                         ? "Buonasera"
                         : todays_hours >= 13
-                          ? "Buon pomeriggio"
-                          : todays_hours >= 7
-                            ? "Buongiorno"
-                            : "Buonanotte"
-                    }
+                        ? "Buon pomeriggio"
+                        : todays_hours >= 7
+                        ? "Buongiorno"
+                        : "Buonanotte"}
                     {/* ", utente registrato." lo farò */}
                 </h1>
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
-                    
-                    <div className="bg-gray-800 bg-opacity-40 p-5 rounded-lg hover:bg-gray-700 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer">
+                    <div className="bg-gray-800/60 bg-opacity-40 p-5 rounded-lg hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer">
                         <div className="bg-amber-500 aspect-square mb-4 rounded-md shadow-lg"></div>
                         <h3 className="font-bold text-lg">
                             Le tue hit preferite
@@ -43,7 +40,7 @@ export default function HomePageComponent() {
                         </p>
                     </div>
 
-                    <div className="bg-gray-800 bg-opacity-40 p-5 rounded-lg hover:bg-gray-700 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer">
+                    <div className="bg-gray-800/60 bg-opacity-40 p-5 rounded-lg hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer">
                         <div className="bg-purple-500 aspect-square mb-4 rounded-md shadow-lg"></div>
                         <h3 className="font-bold text-lg">Nuove uscite</h3>
                         <p className="text-gray-400 text-sm">
@@ -51,7 +48,7 @@ export default function HomePageComponent() {
                         </p>
                     </div>
 
-                    <div className="bg-gray-800 bg-opacity-40 p-5 rounded-lg hover:bg-gray-700 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer">
+                    <div className="bg-gray-800/60 bg-opacity-40 p-5 rounded-lg hover:bg-gray-800 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer">
                         <div className="bg-blue-500 aspect-square mb-4 rounded-md shadow-lg"></div>
                         <h3 className="font-bold text-lg">Mix quotidiano</h3>
                         <p className="text-gray-400 text-sm">
@@ -68,47 +65,44 @@ export default function HomePageComponent() {
                         Esplora playlist
                     </button>
                 </div>
-                
             </div>
 
             {/* Decorazione circolare (come Spotify) */}
-            <div>
-            
-                <div className="animate-float-main absolute -right-32 -top-16 opacity-10 pointer-events-none -z-0">
-                    <div className="rounded-full bg-gradient-to-b from-indigo-500 to-pink-500 w-96 h-96"></div>
-                </div>
-
-                <div className="animate-float-alt absolute -right-32 -top-32 opacity-10 pointer-events-none -z-0">
-                    <div className="rounded-full bg-gradient-to-b from-indigo-500 to-pink-500 w-96 h-96"></div>
-                </div>
-            
-            </div>
-            
-            <div>
-
-                <div className="animate-float-main absolute -right-64 top-40 opacity-10 pointer-events-none -z-0">
-                    <div className="rounded-full -rotate-30 bg-gradient-to-b from-amber-500 to-blue-500 w-96 h-96"></div>
-                </div>
-            
-                <div className="animate-float-alt absolute -right-64 top-48 opacity-10 pointer-events-none -z-0">
-                    <div className="rounded-full -rotate-30 bg-gradient-to-b from-amber-500 to-blue-500 w-96 h-96"></div>
-                </div>
-            
-            </div>
 
             <div>
+                <div>
+                    <div className="animate-float-main absolute -right-32 -top-16 opacity-10 pointer-events-none -z-0">
+                        <div className="rounded-full bg-gradient-to-b from-indigo-500 to-pink-500 w-96 h-96"></div>
+                    </div>
 
-                <div className="animate-float-main absolute -right-72 bottom-32 opacity-10 pointer-events-none -z-0">
-                    <div className="rounded-full -rotate-30 bg-gradient-to-b from-orange-500 to-red-500 w-96 h-96"></div>
+                    <div className="animate-float-alt absolute -right-32 -top-32 opacity-10 pointer-events-none -z-0">
+                        <div className="rounded-full bg-gradient-to-b from-indigo-500 to-pink-500 w-96 h-96"></div>
+                    </div>
                 </div>
-            
-                <div className="animate-float-alt absolute -right-72 bottom-20 opacity-10 pointer-events-none -z-0">
-                    <div className="rounded-full -rotate-30 bg-gradient-to-b from-orange-500 to-red
-                    -500 w-96 h-96"></div>
+
+                <div>
+                    <div className="animate-float-main absolute -right-64 top-40 opacity-10 pointer-events-none -z-0">
+                        <div className="rounded-full -rotate-30 bg-gradient-to-b from-amber-500 to-blue-500 w-96 h-96"></div>
+                    </div>
+
+                    <div className="animate-float-alt absolute -right-64 top-48 opacity-10 pointer-events-none -z-0">
+                        <div className="rounded-full -rotate-30 bg-gradient-to-b from-amber-500 to-blue-500 w-96 h-96"></div>
+                    </div>
                 </div>
-            
+
+                <div>
+                    <div className="animate-float-main absolute -right-72 bottom-32 opacity-10 pointer-events-none -z-0">
+                        <div className="rounded-full -rotate-30 bg-gradient-to-b from-orange-500 to-red-500 w-96 h-96"></div>
+                    </div>
+
+                    <div className="animate-float-alt absolute -right-72 bottom-20 opacity-10 pointer-events-none -z-0">
+                        <div
+                            className="rounded-full -rotate-30 bg-gradient-to-b from-orange-500 to-red
+                -500 w-96 h-96"
+                        ></div>
+                    </div>
+                </div>
             </div>
-        
         </section>
     );
 }

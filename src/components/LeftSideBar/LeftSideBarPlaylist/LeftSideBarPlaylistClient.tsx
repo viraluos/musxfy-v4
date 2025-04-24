@@ -1,19 +1,19 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
 import LeftSideBarSong from "./LeftSideBarSong";
 import { SidebarSong, SidebarSongs } from "@/app/types";
 
 export default function LeftSideBarPlaylistClient({ songs }: { songs: SidebarSongs }) {
-  const [search, setSearch] = useState("");
+  /* const [search, setSearch] = useState("");
 
   const filteredSongs = songs.filter((song: SidebarSong) =>
     song.title.toLowerCase().includes(search.toLowerCase()) || 
     song.author.toLowerCase().includes(search.toLowerCase())
-  );
+  );*/
 
   return (
-    <div className="m-0 lg:mt-8 overflow-y-auto
+    <div className="m-0 lg:mt-4 overflow-y-auto
       [&::-webkit-scrollbar]:w-2
       [&::-webkit-scrollbar-track]:rounded-full
       [&::-webkit-scrollbar-track]:bg-gray-100
@@ -22,19 +22,18 @@ export default function LeftSideBarPlaylistClient({ songs }: { songs: SidebarSon
       dark:[&::-webkit-scrollbar-track]:bg-neutral-700
       dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500
     ">
-      <div className="p-2 sticky top-0 bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg">
-        <h2 className="text-lg font-semibold">Playlist name</h2>
-        <input
+      {/* <div className="p-2 sticky top-0 bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg">
+         <input
           type="text"
           className="w-full p-2 my-4 rounded bg-gray-700"
           placeholder="Enter song name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+        /> 
+      </div> */}
 
       <ul className="flex flex-col gap-2 mb-20" id="playlist-container">
-        {filteredSongs.map((song : SidebarSong) => (
+        {songs.map((song : SidebarSong) => (
           <LeftSideBarSong key={song.id} song={song} />
         ))}
       </ul>

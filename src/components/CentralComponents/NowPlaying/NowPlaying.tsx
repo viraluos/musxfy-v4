@@ -1,27 +1,63 @@
 import Image from "next/image";
 
+import { useEffect, useRef } from "react";
+import { usePlayerStore } from "@/stores/usePlayerStore";
+import Skeleton from "@/components/Skeleton";
+
 export default function NowPlayingComponent() {
 
+    const audioRef = useRef<HTMLAudioElement>(null);
+    const { currentSong, isPlaying } = usePlayerStore();
+
+    useEffect(() => {
+
+        if (!audioRef.current) return;
+
+        if (isPlaying) {
+            audioRef.current.play().catch((err) => {
+                console.error("Playback error:", err);
+            });
+        }
+        else audioRef.current.pause();
+
+    }, [isPlaying]);
+
+    useEffect(() => {
+
+        if (!audioRef.current || !currentSong) return;
+        
+            audioRef.current.src = currentSong.song_path;
+            audioRef.current.load();
+            audioRef.current.play().catch((err) => {
+            console.error("Playback error on song change:", err);
+        
+        });
     
+    }, [currentSong]);
 
     return (
         <section className="flex-1 flex flex-col items-center justify-center p-6 bg-gradient-to-b from-gray-900 to-black relative">
             <div className="relative mb-8">
                 <div className="w-64 h-64 bg-gray-700 rounded-full flex items-center justify-center relative z-10 vinyl-spin overflow-hidden">
-                    <Image
-                        className="w-full h-full object-cover"
-                        alt="Album Art"
-                        src="https://placehold.co/300"
-                        width={300}
-                        height={300}
-                    />
+                    {currentSong?.image ? (
+                        <Image
+                            className="w-full h-full object-cover"
+                            alt={currentSong?.title || "Song name"}
+                            src={currentSong?.image}
+                            width={300}
+                            height={300}
+                        />
+                    ) : (
+                        <Skeleton />
+                    )}
+                    
                 </div>
             </div>
 
             {/* Song Info */}
             <div className="text-center mb-6">
-                <h2 className="text-2xl font-bold">Current Song</h2>
-                <p className="text-gray-400">Artist Name</p>
+                <h2 className="text-2xl font-bold">{currentSong?.title || "Song name"}</h2>
+                <p className="text-gray-400">{currentSong?.author || "Artist name"}</p>
             </div>
 
             {/* Progress Bar */}

@@ -1,5 +1,5 @@
 import LeftSideBarLink from "@/components/LeftSideBar/LeftSideBarLink";
-import LeftSideBarPlaylist from "@/components/LeftSideBar/LeftSideBarPlaylist/LeftSideBarPlaylist";
+// import LeftSideBarPlaylist from "@/components/LeftSideBar/LeftSideBarPlaylist/LeftSideBarPlaylist";
 
 export default function LeftSideBar() {
     const links = [
@@ -28,7 +28,7 @@ export default function LeftSideBar() {
     ];
 
     return (
-        <aside className="sticky top-0 h-screen w-full flex items-center justify-between lg:flex-col lg:items-start lg:justify-start lg:w-64 p-6 bg-gradient-to-r lg:bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900 z-1">
+        <aside className="sticky top-0 z-20 lg:h-screen w-full flex items-center justify-between lg:flex-col lg:items-start lg:justify-start lg:w-64 p-6 bg-gradient-to-r lg:bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900">
             <div>
                 <h2 className="text-xl font-bold lg:mb-6">Library</h2>
 
@@ -39,7 +39,7 @@ export default function LeftSideBar() {
                 </ul>
             </div>
 
-            <LeftSideBarPlaylist />
+            
         </aside>
     );
 }

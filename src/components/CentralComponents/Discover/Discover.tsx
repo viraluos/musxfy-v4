@@ -30,35 +30,35 @@ export default function DiscoverComponent() {
                 <h2 className="text-2xl font-bold mb-6">Sfoglia tutto</h2>
                 <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                     {/* Card categoria */}
-                    <div className="bg-gray-800 p-5 rounded-lg hover:bg-gray-700 transition cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gray-800/60 p-5 rounded-lg hover:bg-gray-800 transition cursor-pointer relative overflow-hidden group">
                         <div className="bg-purple-500 w-24 h-24 rounded-full absolute -right-5 -bottom-5 transform rotate-45 group-hover:scale-120 transition"></div>
                         <h3 className="font-bold text-lg relative z-10">
                             Podcast
                         </h3>
                     </div>
 
-                    <div className="bg-gray-800 p-5 rounded-lg hover:bg-gray-700 transition cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gray-800/60 p-5 rounded-lg hover:bg-gray-800 transition cursor-pointer relative overflow-hidden group">
                         <div className="bg-pink-500 w-24 h-24 rounded-full absolute -right-5 -bottom-5 group-hover:scale-120 transition"></div>
                         <h3 className="font-bold text-lg relative z-10">
                             Live
                         </h3>
                     </div>
 
-                    <div className="bg-gray-800 p-5 rounded-lg hover:bg-gray-700 transition cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gray-800/60 p-5 rounded-lg hover:bg-gray-800 transition cursor-pointer relative overflow-hidden group">
                         <div className="bg-blue-500 w-24 h-24 rounded-full absolute -right-5 -bottom-5 transform rotate-12 group-hover:scale-120 transition"></div>
                         <h3 className="font-bold text-lg relative z-10">
                             Nuove uscite
                         </h3>
                     </div>
 
-                    <div className="bg-gray-800 p-5 rounded-lg hover:bg-gray-700 transition cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gray-800/60 p-5 rounded-lg hover:bg-gray-800 transition cursor-pointer relative overflow-hidden group">
                         <div className="bg-yellow-500 w-24 h-24 rounded-full absolute -right-5 -bottom-5 transform rotate-30 group-hover:scale-120 transition"></div>
                         <h3 className="font-bold text-lg relative z-10">
                             Generi
                         </h3>
                     </div>
 
-                    <div className="bg-gray-800 p-5 rounded-lg hover:bg-gray-700 transition cursor-pointer relative overflow-hidden group">
+                    <div className="bg-gray-800/60 p-5 rounded-lg hover:bg-gray-800 transition cursor-pointer relative overflow-hidden group">
                         <div className="bg-red-500 w-24 h-24 rounded-full absolute -right-5 -bottom-5 transform rotate-20 group-hover:scale-120 transition"></div>
                         <h3 className="font-bold text-lg relative z-10">
                             Classifiche
@@ -73,7 +73,7 @@ export default function DiscoverComponent() {
 
                 {/* Tabella brani */}
                 <div className="w-full bg-opacity-40 rounded-lg overflow-hidden">
-                    <div className="grid grid-cols-12 gap-4 p-4 mb-1 bg-gray-800 text-gray-400 text-sm font-medium">
+                    <div className="grid grid-cols-12 gap-4 p-4 mb-1 bg-gray-800/60 text-gray-400 text-sm font-medium">
                         <div className="col-span-1">#</div>
                         <div className="col-span-5 2xl:col-span-3">TITOLO</div>
                         <div className="col-span-3">ARTISTA</div>
@@ -83,7 +83,7 @@ export default function DiscoverComponent() {
                     </div>
 
                     {/* Riga brano */}
-                    <div className="grid grid-cols-12 gap-4 p-4 items-center bg-gray-800 hover:bg-gray-700 transition group">
+                    <div className="grid grid-cols-12 gap-4 p-4 items-center bg-gray-800/60 hover:bg-gray-800 transition group">
                         <div className="col-span-1 text-gray-400 group-hover:text-amber-500">
                             1
                         </div>
@@ -118,26 +118,26 @@ export default function DiscoverComponent() {
                 {/* Sezione artisti */}
                 <h3 className="text-xl font-bold mt-8 mb-4">Artisti</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                    <div className="text-center">
+                    <div className="cursor-pointer bg-gray-800/60 hover:bg-gray-800 hover:-translate-y-1 rounded-lg transition p-4 text-center">
                         <div className="bg-gray-700 rounded-full aspect-square mb-3 overflow-hidden group">
                             <div className="w-full h-full bg-purple-500 group-hover:scale-105 transition"></div>
                         </div>
-                        <div className="font-medium">Nome Artista</div>
-                        <div className="text-sm text-gray-400">Artista</div>
+                        <div className="font-medium">Primo Artista</div>
+                        <div className="text-sm text-gray-400">Primo Artista</div>
                     </div>
-                    <div className="text-center">
+                    <div className="cursor-pointer bg-gray-800/60 hover:bg-gray-800 hover:-translate-y-1 rounded-lg transition p-4 text-center">
                         <div className="bg-gray-700 rounded-full aspect-square mb-3 overflow-hidden group">
                             <div className="w-full h-full bg-pink-500 group-hover:scale-105 transition"></div>
                         </div>
-                        <div className="font-medium">Nome Artista</div>
-                        <div className="text-sm text-gray-400">Artista</div>
+                        <div className="font-medium">Secondo Artista</div>
+                        <div className="text-sm text-gray-400">Secondo Artista</div>
                     </div>
-                    <div className="text-center">
+                    <div className="cursor-pointer bg-gray-800/60 hover:bg-gray-800 hover:-translate-y-1 rounded-lg transition p-4 text-center">
                         <div className="bg-gray-700 rounded-full aspect-square mb-3 overflow-hidden group">
                             <div className="w-full h-full bg-blue-500 group-hover:scale-105 transition"></div>
                         </div>
-                        <div className="font-medium">Nome Artista</div>
-                        <div className="text-sm text-gray-400">Artista</div>
+                        <div className="font-medium">Terzo Artista</div>
+                        <div className="text-sm text-gray-400">Terzo Artista</div>
                     </div>
                     {/* Altri artisti... */}
                 </div>
