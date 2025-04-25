@@ -1,3 +1,8 @@
 export default function Skeleton() {
-    return <div className={`bg-gradient-to-b from-indigo-600 to-pink-600 animate-ping`} />;
+    return (
+        <div
+            className={`w-full h-full bg-gradient-to-br from-indigo-600 to-green-600 animate-skeleton`}
+            style={{ backgroundSize: "200% 200%" }}
+        />
+    );
 }

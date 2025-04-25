@@ -1,10 +1,21 @@
 "use client";
 
+import { usePlayerStore } from "@/stores/usePlayerStore";
 // import { useState } from "react";
 import LeftSideBarSong from "./RightSideBarSong";
 import { SidebarSong, SidebarSongs } from "@/app/types";
+import { useEffect } from "react";
 
 export default function LeftSideBarPlaylistClient({ songs }: { songs: SidebarSongs }) {
+
+  const { setQueue } = usePlayerStore();
+
+  useEffect(() => {
+
+    setQueue(songs);
+    
+}, [setQueue, songs]);
+
   /* const [search, setSearch] = useState("");
 
   const filteredSongs = songs.filter((song: SidebarSong) =>
@@ -33,8 +44,8 @@ export default function LeftSideBarPlaylistClient({ songs }: { songs: SidebarSon
       </div> */}
 
       <ul className="flex flex-col gap-2 mb-20" id="playlist-container">
-        {songs.map((song : SidebarSong) => (
-          <LeftSideBarSong key={song.id} song={song} />
+        {songs.map((song: SidebarSong, index: number) => (
+          <LeftSideBarSong key={song.id} song={song} index={index} />
         ))}
       </ul>
     </div>

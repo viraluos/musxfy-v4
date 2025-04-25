@@ -2,13 +2,13 @@ import { SidebarSong } from "@/app/types";
 import Image from "next/image";
 import { usePlayerStore } from "@/stores/usePlayerStore";
 
-export default function LeftSideBarSong({ song }: { song: SidebarSong }) {
+export default function LeftSideBarSong({ song, index }: { song: SidebarSong, index: number }) {
     const playSong = usePlayerStore((state) => state.playSong);
 
     return (
         <li
             className="flex gap-2 p-2 hover:bg-gray-700/50 rounded cursor-pointer transition"
-            onClick={() => playSong(song)}
+            onClick={() => playSong(song, index)}
         >
             <Image
                 className="w-10 h-10 rounded-md object-cover"

@@ -20,7 +20,8 @@
         transform: translateY(-8px) translateX(3px) rotate(1.2deg);
     }
     30% {
-        transform: translateY(-12px) translateX(-1px) rotate(-0.5deg) scale(1.02);
+        transform: translateY(-12px) translateX(-1px) rotate(-0.5deg)
+            scale(1.02);
     }
     40% {
         transform: translateY(-14px) translateX(-3px) rotate(-1.8deg);
@@ -75,6 +76,12 @@
     }
 }
 
+@keyframes shimmer-move {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
 .vinyl-spin {
     animation: spin 20s linear infinite;
     animation-play-state: paused;
@@ -90,4 +97,8 @@
 
 .animate-float-alt {
     animation: float-alt 25s ease-in-out infinite;
+}
+
+.animate-skeleton {
+    animation: shimmer-move 10s ease-in-out infinite;
 }
