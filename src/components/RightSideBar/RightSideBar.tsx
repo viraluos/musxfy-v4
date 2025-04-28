@@ -32,20 +32,20 @@ export default function RightSideBar() {
             </div>*/}
 
             <nav className="border-b border-gray-800 mb-8">
-                <ul className="flex gap-4">
-                    <li className="text-lg font-bold cursor-pointer pb-4 border-b-2 border-amber-500">
+                <ul className="flex justify-between gap-4">
+                    <li className="text-lg cursor-pointer pb-4 border-b-2 border-amber-500">
                         Tutte
                     </li>
 
-                    <li className="text-lg font-bold cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
-                        Le tue creazioni
+                    <li className="text-lg cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
+                        Creazioni
                     </li>
 
-                    <li className="text-lg font-bold cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
-                        Playlist seguite
+                    <li className="text-lg cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
+                        Seguite
                     </li>
 
-                    <li className="text-lg font-bold cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
+                    <li className="text-lg cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
                         Potrebbero piacerti
                     </li>
                 </ul>
