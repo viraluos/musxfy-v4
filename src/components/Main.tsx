@@ -6,6 +6,7 @@ import HomePageComponent from "@/components/CentralComponents/HomePage/HomePage"
 import DiscoverComponent from "./CentralComponents/Discover/Discover";
 import PlaylistsComponent from "./CentralComponents/Playlists/Playlists";
 import NowPlayingComponent from "@/components/CentralComponents/NowPlaying/NowPlaying";
+import CircularDeco from "./CircularDeco";
 
 
 export default function Main() {

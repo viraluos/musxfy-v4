@@ -6,6 +6,7 @@ import Skeleton from "@/components/Skeleton";
 
 import { FaPause, FaPlay } from "react-icons/fa";
 import { IoPlaySkipForward, IoPlaySkipBack } from "react-icons/io5";
+import CircularDeco from "@/components/CircularDeco";
 
 export default function NowPlayingComponent() {
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -107,6 +108,8 @@ export default function NowPlayingComponent() {
             {currentSong && (
                 <audio ref={audioRef} src={currentSong.song_path} />
             )}
+
+            <CircularDeco />
         </section>
     );
 }
