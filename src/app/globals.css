@@ -77,9 +77,15 @@
 }
 
 @keyframes shimmer-move {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 0% 100%; }
-    100% { background-position: 0% 0%; }
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
 }
 
 .vinyl-spin {
@@ -101,4 +107,153 @@
 
 .animate-skeleton {
     animation: shimmer-move 10s ease-in-out infinite;
+}
+
+/* global/animations.css classes */
+
+@keyframes appear-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    25% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes disappear-top {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes appear-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    25% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes disappear-left {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    25% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+}
+
+@keyframes appear-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    25% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes disappear-bottom {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    25% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+}
+
+@keyframes appear-right {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    25% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes disappear-right {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    25% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+}
+
+.appear,
+.animation {
+    animation-duration: var(--animation-duration);
+    animation-timing-function: cubic-bezier(0.6, 0.55, 0.25, 1);
+}
+
+.disappear {
+    animation-duration: var(--animation-duration);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.75, 0);
+}
+
+.appear.top {
+    animation-name: appear-top;
+}
+.disappear.top {
+    animation-name: disappear-top;
+}
+
+.appear.right {
+    animation-name: appear-right;
+}
+.disappear.right {
+    animation-name: disappear-right;
+}
+
+.appear.bottom {
+    animation-name: appear-bottom;
+}
+.disappear.bottom {
+    animation-name: disappear-bottom;
+}
+
+.appear.left {
+    animation-name: appear-left;
+}
+.disappear.left {
+    animation-name: disappear-left;
 }

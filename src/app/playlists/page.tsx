@@ -11,7 +11,7 @@ export default function Playlists() {
 
                 <Main />
 
-                <RightSideBar />
+                <RightSideBar path=""/>
             </div>
 
             <Footer />

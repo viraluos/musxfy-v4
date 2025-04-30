@@ -1,16 +1,17 @@
 import Image from "next/image";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
 import { usePlayerStore } from "@/stores/usePlayerStore";
-import Skeleton from "@/components/Skeleton";
+import { Skeleton } from "@mui/material";
+import CircularDeco from "@/components/CircularDeco";
 
 import { FaPause, FaPlay } from "react-icons/fa";
 import { IoPlaySkipForward, IoPlaySkipBack } from "react-icons/io5";
-import CircularDeco from "@/components/CircularDeco";
 
 export default function NowPlayingComponent() {
     const audioRef = useRef<HTMLAudioElement>(null);
-    const { currentSong, isPlaying, pause, resume, playPrevious, playNext } = usePlayerStore();
+    const { currentSong, queue, currentIndex, syncState, isPlaying, pause, resume, playPrevious, playNext } = usePlayerStore();
 
     useEffect(() => {
         if (!audioRef.current) return;
@@ -27,41 +28,81 @@ export default function NowPlayingComponent() {
     }, [isPlaying]);
 
     useEffect(() => {
+
         if (!audioRef.current || !currentSong) return;
 
         audioRef.current.src = currentSong.song_path;
         audioRef.current.load();
-        resume();
-    }, [currentSong, resume]);
+
+        localStorage.setItem("vCurrentSong", JSON.stringify(currentSong));
+        localStorage.setItem("vQueue", JSON.stringify(queue));
+        localStorage.setItem("vCurrentIndex", currentIndex.toString());
+
+    }, [currentSong]);
+
+    useEffect(() => {
+
+        try{
+
+            const localSong = JSON.parse(localStorage.getItem("vCurrentSong") ?? "{}");
+            const localQueue = JSON.parse(localStorage.getItem("vQueue") ?? "[]");
+            const localIndex = JSON.parse(localStorage.getItem("vCurrentIndex") ?? "0");
+
+            if(!audioRef.current || !localSong) return;
+
+            audioRef.current.src = localSong.song_path;
+            audioRef.current.load();
+
+            syncState({
+                previousSong: localSong,
+                previousQueue: localQueue,
+                previousIndex: localIndex,
+            });
+
+        }
+        catch(e){ console.error("errore parsing da ls: ", e) }
+
+    }, []);
+
+    const [imageLoading, setImageLoading] = useState(false);
 
     return (
         <section className="flex-1 flex flex-col items-center justify-center p-6 bg-gradient-to-b from-gray-900 to-black relative">
             <div className="relative mb-8">
-                <div className="w-96 h-96 bg-gray-700 rounded-xl flex items-center justify-center relative z-10 vinyl-spin overflow-hidden">
+                <div className="w-96 h-96 rounded-xl hover:-translate-y-1 flex items-center transition justify-center relative z-10 overflow-hidden"> {/* vinyl-spin */}
                     {currentSong?.image ? (
                         <Image
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full hover:shadow-xl transition object-cover ${(!imageLoading) ? 'opacity-0 -translate-y-5' : 'opacity-100 -translate-y-0'}`}
                             alt={currentSong?.title || "Song name"}
                             src={currentSong?.image}
                             width={300}
                             height={300}
+                            onLoadingComplete={() => setImageLoading(true)}
                         />
                     ) : (
-                        <Skeleton />
+                        <Skeleton
+                            sx={{ bgcolor: 'grey.500' }}
+                            variant="rounded"
+                            animation="wave"
+                            width="100%"
+                            height="100%"
+                        />
                     )}
                 </div>
             </div>
 
             {/* Song Info */}
             <div className="text-center mb-6">
-                <h2 className="text-4xl font-bold">
+                <h2 className="text-4xl font-bold appear top" style={{ "--animation-duration": "300ms" } as React.CSSProperties}>
                     {currentSong?.title || "Choose a song"}
                 </h2>
-                <p className="text-xl text-gray-400">{currentSong?.author || ""}</p>
+                <p className="text-xl text-gray-400 appear top" style={{ "--animation-duration": "400ms" } as React.CSSProperties}>
+                    {currentSong?.author || ""}
+                    </p>
             </div>
 
             {/* Progress Bar */}
-            <div className="w-full max-w-lg mb-6">
+            <div className="w-full max-w-lg mb-6 appear top" style={{ "--animation-duration": "500ms" } as React.CSSProperties}>
                 <div className="flex justify-between text-xs text-gray-400 mb-1">
                     <span>00:00</span>
                     <span>00:00</span>
@@ -75,7 +116,7 @@ export default function NowPlayingComponent() {
             </div>
 
             {/* Controls */}
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-6 appear top" style={{ "--animation-duration": "600ms" } as React.CSSProperties}>
                 <button className="w-16 h-16 flex justify-center items-center cursor-pointer p-3 bg-gray-700/50 rounded-full hover:bg-amber-500 active:scale-97 transition"
                     onClick={playPrevious}
                 >
@@ -105,9 +146,6 @@ export default function NowPlayingComponent() {
                     <IoPlaySkipForward size={30} />
                 </button>
             </div>
-            {currentSong && (
-                <audio ref={audioRef} src={currentSong.song_path} />
-            )}
 
             <CircularDeco />
         </section>

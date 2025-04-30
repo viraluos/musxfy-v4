@@ -1,8 +1,8 @@
 import { prisma } from "@/lib/prisma";
-import LeftSideBarPlaylistClient from "./RightSideBarPlaylistClient";
+import RightSideBarPlaylistClient from "./RightSideBarPlaylistClient";
 
-export default async function LeftSideBarPlaylist() {
+export default async function RightSideBarPlaylist({ path }: { path: string }) {
   const songs = await prisma.songs.findMany();  
 
-  return <LeftSideBarPlaylistClient songs={songs} />;
+  return <RightSideBarPlaylistClient songs={songs} path={path} />;
 }

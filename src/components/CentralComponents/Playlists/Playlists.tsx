@@ -24,15 +24,15 @@ export default function PlaylistsComponent() {
                     <li className="cursor-pointer pb-4 border-b-2 border-amber-500 font-medium">
                         Tutte
                     </li><li><Separator /></li>
-                    
+
                     <li className="cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
                         Le tue creazioni
                     </li><li><Separator /></li>
-                    
+
                     <li className="cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
                         Playlist seguite
                     </li><li><Separator /></li>
-                    
+
                     <li className="cursor-pointer pb-4 text-gray-400 hover:text-white hover:border-b-2 border-amber-800 transition">
                         Potrebbero piacerti
                     </li>
@@ -43,6 +43,26 @@ export default function PlaylistsComponent() {
             <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-6">Le tue creazioni</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+                    {/* Card "Crea nuova playlist" */}
+                    <div className="w-48 h-64 hover:-translate-y-1 bg-gray-800 bg-opacity-20 p-4 rounded-lg hover:bg-gray-700 transition cursor-pointer border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-square">
+                        <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center mb-3">
+                            <svg
+                                className="w-5 h-5"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    fillRule="evenodd"
+                                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                                    clipRule="evenodd"
+                                />
+                            </svg>
+                        </div>
+                        <h3 className="font-medium text-center">
+                            Nuova playlist
+                        </h3>
+                    </div>
+
                     {/* Card playlist personale */}
                     <div className="bg-gray-800 bg-opacity-40 p-4 rounded-lg hover:bg-gray-700 hover:-translate-y-1 transition cursor-pointer group">
                         <div className="relative mb-4 aspect-square">
@@ -64,26 +84,6 @@ export default function PlaylistsComponent() {
                             I miei preferiti
                         </h3>
                         <p className="text-sm text-gray-400">12 brani</p>
-                    </div>
-
-                    {/* Card "Crea nuova playlist" */}
-                    <div className="hover:-translate-y-1 bg-gray-800 bg-opacity-20 p-4 rounded-lg hover:bg-gray-700 transition cursor-pointer border-2 border-dashed border-gray-600 flex flex-col items-center justify-center aspect-square">
-                        <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center mb-3">
-                            <svg
-                                className="w-5 h-5"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        </div>
-                        <h3 className="font-medium text-center">
-                            Nuova playlist
-                        </h3>
                     </div>
 
                     {/* Altre playlist personali... */}

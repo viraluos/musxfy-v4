@@ -1,11 +1,22 @@
+"use client";
+
 import { SidebarSong } from "@/app/types";
 import Image from "next/image";
 import { usePlayerStore } from "@/stores/usePlayerStore";
+import { useEffect } from "react";
 
-export default function LeftSideBarSong({ song, index }: { song: SidebarSong, index: number }) {
+export default function RightSideBarSong({ song, index, path }: { song: SidebarSong, index: number, path: string }) {
     const playSong = usePlayerStore((state) => state.playSong);
 
-    const { currentIndex } = usePlayerStore();
+    const { currentSong, queue, currentIndex } = usePlayerStore();
+
+    useEffect(() => {
+
+        localStorage.setItem("vCurrentSong", JSON.stringify(currentSong));
+        localStorage.setItem("vQueue", JSON.stringify(queue));
+        localStorage.setItem("vCurrentIndex", currentIndex.toString());
+
+    }, [currentSong]);
 
     return (
         <li
@@ -18,9 +29,9 @@ export default function LeftSideBarSong({ song, index }: { song: SidebarSong, in
                 src={song.image}
                 width={60} height={60}
             />
-            <div className="flex flex-col w-64">
-                <span className="block text-lg font-medium truncate">{song.title}</span>
-                <span className="block text-md text-gray-400 truncate">{song.author}</span>
+            <div className={`flex flex-col ${path == "nowplaying" ? "w-full" : "w-64"}`}>
+                <span className={`${path == "nowplaying" ? "" : "truncate"} block text-lg font-medium`}>{song.title}</span>
+                <span className={`${path == "nowplaying" ? "" : "truncate"} block text-md text-gray-400`}>{song.author}</span>
             </div>
         </li>
     );

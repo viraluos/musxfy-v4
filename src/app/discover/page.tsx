@@ -6,12 +6,13 @@ import RightSideBar from "@/components/RightSideBar/RightSideBar";
 export default function Discover() {
     return (
         <div className="overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen flex flex-col">
+
             <div className="flex flex-grow flex-col lg:flex-row">
                 <LeftSideBar />
 
                 <Main />
 
-                <RightSideBar />
+                <RightSideBar path=""/>
             </div>
 
             <Footer />

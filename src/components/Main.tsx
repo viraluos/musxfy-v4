@@ -1,15 +1,18 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-
 import HomePageComponent from "@/components/CentralComponents/HomePage/HomePage";
 import DiscoverComponent from "./CentralComponents/Discover/Discover";
 import PlaylistsComponent from "./CentralComponents/Playlists/Playlists";
 import NowPlayingComponent from "@/components/CentralComponents/NowPlaying/NowPlaying";
-import CircularDeco from "./CircularDeco";
 
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+import { usePlayerStore } from "@/stores/usePlayerStore";
 
 export default function Main() {
+
+    const audioRef = useRef<HTMLAudioElement>(null);
+    const { currentSong, isPlaying, pause, resume, playPrevious, playNext } = usePlayerStore();
 
     const pathname = usePathname();
 
@@ -35,9 +38,13 @@ export default function Main() {
     };
   
     return(
-        <main className="flex flex-grow flex-col lg:flex-row">
+        <main className="w-2/4 flex flex-grow flex-col lg:flex-row">
 
             {renderPage()}
+
+            {currentSong && (
+                <audio ref={audioRef} src={currentSong.song_path} />
+            )}
 
         </main>
     );

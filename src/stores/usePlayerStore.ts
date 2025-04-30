@@ -20,6 +20,7 @@ type PlayerState = {
     setQueue: (songs: SidebarSong[]) => void;
     playPrevious: () => void;
     playNext: () => void;
+    syncState: (data: { previousSong: SidebarSong, previousQueue: SidebarSong[], previousIndex: number }) => void;
 };
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
@@ -43,5 +44,21 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
         const nextIndex = (currentIndex + 1) % queue.length;
         playSong(queue[nextIndex], nextIndex);
     },
+
+    syncState: (
+        data: {
+            previousSong: SidebarSong;
+            previousQueue: SidebarSong[];
+            previousIndex: number;
+        }
+    ) => {
+        const { previousSong, previousQueue, previousIndex } = data;
+
+        set(() => ({
+            currentSong: previousSong,
+            queue: previousQueue,
+            currentIndex: previousIndex,
+        }));
+    }
 
 }));

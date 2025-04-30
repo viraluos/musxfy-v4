@@ -11,7 +11,7 @@ export default function Nowplaying() {
 
                 <Main />
 
-                <RightSideBar />
+                <RightSideBar path="nowplaying"/>
             </div>
 
             <Footer />
